@@ -3,8 +3,24 @@ const client = new Discord.Client();
 const config = require("./config.json");
 const guild = ('478563707111342080');
 
+const commandhelper = new Discord.RichEmbed()
+  .setTitle("Commands")
+  .setAuthor("Tennisball")
+  .setColor(0x2ecc71)
+  .setDescription("A List of available commands is below:")
+  .setFooter("More commmands in progress! PM Phoenix#2432 for suggestions!")
+  .setThumbnail("http://gsheps.net/assets/tennisball.png")
+  .setTimestamp()
+  .setURL("https://gsheps.net")
+  .addField("Prefix:","The Prefix for Tennisball Bot is $.")
+  .addField("Help / Commands", "You just ran this one dummy!")
+  .addField("Ping", "Replies with a Pong to alert that Tennisball is alive.")
+  .addField("Bark", "Basically ping, for dogs.")
+  .addField("Ball", "A Text based game of fetch!")
+  .addField("Zoomies", "Zoomies! Comes with included GIF!")
+  .addField("Failure", "With all great success, comes failure, Now with included GIF!");
 
-client.on('ready', () => {
+  client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
   client.user.setPresence({
     game: {
@@ -44,15 +60,17 @@ client.on("message", message => {
     message.channel.send('Failure is another step in the right direction!', {
       file: "http://gsheps.net/assets/failure.gif"
   })
+  }  else
+  if (command === 'help') {
+    message.channel.send({embed:commandhelper})
+  }  else
+  if (command === 'commands') {
+    message.channel.send({embed:commandhelper})
   }
 });
 
-client.on("message", message => {
-  if (message.content === 'What is my purpose?') {
-    message.channel.send('To pass the butter');
-    message.channel.send('https://youtu.be/X7HmltUWXgs?t=36')
-  }
-});
+
+
 
 client.login(config.token);
 
