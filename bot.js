@@ -6,9 +6,18 @@ const guild = ('478563707111342080');
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
+  client.user.setPresence({
+    game: {
+      name: 'Fetch with all the good bois!',
+      type: 'PLAYING'
+    },
+    status: 'Throwing ball'
+  })
 });
 
-client.on("message", message=> {
+
+
+client.on("message", message => {
   if (message.author.bot) return;
   // insert code =)
   if (message.content.indexOf(config.prefix) !==0) return;
@@ -30,16 +39,32 @@ client.on("message", message=> {
   if (command === 'ball') {
     message.reply('There it is! Go get it!');
     message.react('🎾')
-  } else
-  if (command === 'showtennisball') {
-    message.guild.createChannel('Tennis Balls', 'text');
-    message.channel.send('Channel Created! 🐶');
-    console.log(tennischannel)
-  } else
-  if (command === 'hidetennisball' && message.channel.id == "tennischannel") {
-    message.channel.delete();
-    message.channel.send('Channel Deleted! ❌')
+  }  else
+  if (command === 'failure') {
+    message.channel.send('Failure is another step in the right direction!', {
+      file: "http://gsheps.net/assets/failure.gif"
+  })
+  }
+});
+
+client.on("message", message => {
+  if (message.content === 'What is my purpose?') {
+    message.channel.send('To pass the butter');
+    message.channel.send('https://youtu.be/X7HmltUWXgs?t=36')
   }
 });
 
 client.login(config.token);
+
+/*
+    else
+if (command === 'showtennisball') {
+  message.guild.createChannel('Tennis Balls', 'text');
+  message.channel.send('Channel Created! 🐶');
+  console.log(tennischannel)
+} else
+if (command === 'hidetennisball' && message.channel.id == "tennischannel") {
+  message.channel.delete();
+  message.channel.send('Channel Deleted! ❌')
+}
+*/
