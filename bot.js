@@ -3,13 +3,13 @@ const client = new Discord.Client();
 const config = require("./config.json");
 const guild = ('478563707111342080');
 
+
 const commandhelper = new Discord.RichEmbed()
   .setTitle("Commands")
   .setAuthor("Tennisball")
   .setColor(0x2ecc71)
   .setDescription("A List of available commands is below:")
   .setFooter("More commmands in progress! PM Phoenix#2432 for suggestions!")
-  .setThumbnail("http://gsheps.net/assets/tennisball.png")
   .setTimestamp()
   .addField("Prefix:","The Prefix for Tennisball Bot is $.")
   .addField("Help / Commands", "You just ran this one dummy!")
@@ -30,7 +30,7 @@ const commandhelper = new Discord.RichEmbed()
   })
 });
 
-
+//Fun Commands / Help
 
 client.on("message", message => {
   if (message.author.bot) return;
@@ -68,20 +68,25 @@ client.on("message", message => {
   }
 });
 
+//My Attempt at a Channel Show / Hide ✅
 
+client.on("message", message => {
+  if (message.author.bot) return;
 
+  if (message.content.indexOf(config.prefix) !==0) return;
+
+  const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+  const command = args.shift().toLowerCase();
+  var tennischannel = message.guild.channels.find(channel => channel.name === "tennis-balls-🎾");
+
+  if(command === 'showtennischannel') {
+    message.channel.send('Channel Created! 🐶')
+    message.guild.createChannel('Tennis-Balls-🎾', 'text')
+  }   else
+  if (command === 'hidetennischannel' && message.channel.id == tennischannel.id) {
+    message.channel.send('Channel Deleted! ❌')
+    message.channel.delete()
+  }
+});
 
 client.login(config.token);
-
-/*
-    else
-if (command === 'showtennisball') {
-  message.guild.createChannel('Tennis Balls', 'text');
-  message.channel.send('Channel Created! 🐶');
-  console.log(tennischannel)
-} else
-if (command === 'hidetennisball' && message.channel.id == "tennischannel") {
-  message.channel.delete();
-  message.channel.send('Channel Deleted! ❌')
-}
-*/
