@@ -1,8 +1,8 @@
 # TennisBall
 
-*What is tennisball bot you may ask?:*
+*What is Tennisball you may ask?:*
 
-Tennisball bot is a multi-purpose bot designed for replying to user commands and comments based off memes and pop culture as well as some furry lingo thrown in for shits and giggles.
+Tennisball is a multi-purpose Discord bot designed for replying to user commands and comments based off memes and pop culture as well as some furry lingo thrown in for shits and giggles.
 
 <h3>Progress Thus-far</h3>
 
