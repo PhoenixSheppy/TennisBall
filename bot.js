@@ -82,11 +82,16 @@ client.on("message", message => {
   if(command === 'showtennischannel') {
     message.channel.send('Channel Created! 🐶')
     message.guild.createChannel('Tennis-Balls-🎾', 'text')
-  }   else
+      .then(tennisChannel => message.channel.send("Channel Created! ✅"))
+      .catch(error => message.channel.send("Error creating channel! ❌"))
+  }  else
   if (command === 'hidetennischannel' && message.channel.id == tennischannel.id) {
-    message.channel.send('Channel Deleted! ❌')
     message.channel.delete()
+      .then(tennisChannel => message.channel.send("Channel Deleted ✅"))
+      .catch(error => message.channel.send("Error deleting channel! ❌"))
   }
 });
 
 client.login(config.token);
+
+
