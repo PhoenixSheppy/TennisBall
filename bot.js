@@ -80,7 +80,6 @@ client.on("message", message => {
   var tennischannel = message.guild.channels.find(channel => channel.name === "tennis-balls-🎾");
 
   if(command === 'showtennischannel') {
-    message.channel.send('Channel Created! 🐶')
     message.guild.createChannel('Tennis-Balls-🎾', 'text')
       .then(tennisChannel => message.channel.send("Channel Created! ✅"))
       .catch(error => message.channel.send("Error creating channel! ❌"))
@@ -91,6 +90,39 @@ client.on("message", message => {
       .catch(error => message.channel.send("Error deleting channel! ❌"))
   }
 });
+
+//Kick a Player time! (With Permission!) ✅
+
+client.on('message', message => {
+
+  if (message.content.indexOf(config.prefix) !==0) return;
+
+  const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+  const command = args.shift().toLowerCase();
+
+  if (command.startsWith('kick') && message.author.id === '199317085711499264') {
+    const user = message.mentions.users.first();
+    
+    if (user) {
+      const member = message.guild.member(user);
+
+      if (member) {
+        member.kick('He got h*cked by the bot').then(() => {
+          message.reply('User h*cked from existance');
+        }).catch(err => {
+          message.reply('Fix your permissions silly! I cant kick without them');
+        });
+        } else {
+          message.reply('That user isn\'t in this server!');
+        }
+        } else {
+          message.reply('You didn\'t mention a user to H*ck!');
+        }
+      }
+    });
+
+
+//
 
 client.login(config.token);
 
