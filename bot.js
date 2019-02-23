@@ -17,7 +17,10 @@ const commandhelper = new Discord.RichEmbed()
   .addField("Bark", "Basically ping, for dogs.")
   .addField("Ball", "A Text based game of fetch!")
   .addField("Zoomies", "Zoomies! Comes with included GIF!")
-  .addField("Failure", "With all great success, comes failure, Now with included GIF!");
+  .addField("Failure", "With all great success, comes failure, Now with included GIF!")
+  .addField("Showtennisballchannel", "Show the wonderful, all and mighty tennis ball channel.")
+  .addField("Hidetennisballchannel", "Hide the wonderful, yet pointless tennis ball channel, *must be executed from the channel itself*.")
+  .addField("Kick", "Kick a bad boi who's not sharing his tennisballs with the other dogs.");
 
   client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
