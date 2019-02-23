@@ -1,7 +1,7 @@
 # TennisBall
 
-![Demoimage]
-(https://github.com/Phoenixthedoggo/TennisBall/blob/master/assets/readmeimage.png)
+![Demoimage](https://github.com/Phoenixthedoggo/TennisBall/blob/master/assets/readmeimage.png)
+
 
 *What is Tennisball you may ask?:*
 
@@ -14,6 +14,5 @@ Tennisball is a multi-purpose Discord bot designed for replying to user commands
 * - [ ] Commands
 * - [ ] Special Features~
 
-Add TennisBall to your server!:
+[Add TennisBall to your server!](https://discordapp.com/api/oauth2/authorize?client_id=547525130176299038&permissions=388178&scope=bot)
 
-https://discordapp.com/api/oauth2/authorize?client_id=547525130176299038&permissions=388178&scope=bot
