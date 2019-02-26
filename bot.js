@@ -125,6 +125,36 @@ client.on('message', message => {
     });
 
 
+    // Roll a six sided dice, and reply with output ✅
+
+    client.on('message', message => {
+
+      if (message.content.indexOf(config.prefix) !==0) return;
+
+      const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+      const command = args.shift().toLowerCase();
+
+      if (command === 'dice') {
+        var dicesol = Math.floor(Math.random() * 6) + 1
+        message.reply(`You rolled a: **${dicesol}**`)
+      }
+    });
+
+    // Roll a 20 sided dice, for all you D&D fans out there ;) ✅
+
+    client.on('message', message => {
+
+      if (message.content.indexOf(config.prefix) !==0) return;
+
+      const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+      const command = args.shift().toLowerCase();
+
+      if (command === 'd20') {
+        var d20sol = Math.floor(Math.random() * 20) + 1
+        message.reply(`You rolled a: **${d20sol}**`)
+      }
+    });
+
 //
 
 client.login(config.token);
