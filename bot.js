@@ -29,23 +29,20 @@ const informationembed = new Discord.RichEmbed()
   .setTitle("About TennisBall:")
   .setAuthor("TennisBall", "http://gsheps.net/assets/tennisball.jpg", "https://gsheps.net")
   .setColor(0x33416a)
-  .setDescription("Information about TennisBall")
   .setFooter("TennisBall is written entirely by Phoenix#2432, with small snippets based off publically available Discord.JS samples.")
   .setTimestamp()
-  .addField("TennisBall was written as an AP (Advanced Placement) Create Project. It's intended purpose was to be a multi-function Discord bot capable of light moderation, as well as have some fun commands and replies.")
-  .addField("This project was written entirely in DiscordJS, which is a JS library for writing Discord bots.")
-  .addField("The inspriation for this project was entirely based on furry pop culture and dog jokes. I personally blame my wonderful lifestyle for the creation of this project.")
-  .addField("Additions to this project will probably be infinite since I'm always adding stuff to it, and there's always some new feature available on Discord.")
-  .addField("This bot is publically opensourced on my Github: https://github.com/Phoenixthedoggo/TennisBall, Please feel free to take a copy to host yourself.")
-  .addField("This bot is also hosted on a Google Cloud VM instance, so feel free to add it to your guild via this invite link!")
-  .addField("https://discordapp.com/api/oauth2/authorize?client_id=547525130176299038&permissions=388178&scope=bot");
+  .addField("TennisBall was written as an AP (Advanced Placement) Create Project. It's intended purpose was to be a multi-function Discord bot capable of light moderation, as well as have some fun commands and replies.", "This project was written entirely in DiscordJS, which is a JS library for writing Discord bots.")
+  .addField("The inspriation for this project was entirely based on furry pop culture and dog jokes.", "I personally blame my wonderful lifestyle for the creation of this project.")
+  .addField("Additions to this project will probably be infinite since I'm always adding stuff to it, and there's always some new feature available on Discord.", "And, there's always new jokes, ¯\_(ツ)_/¯")
+  .addField("This bot is publically opensourced on my Github:", "https://github.com/Phoenixthedoggo/TennisBall, Please feel free to take a copy to host yourself.")
+  .addField("TennisBall is also hosted on a Google Cloud VM instance, so feel free to add it to your guild via this invite link!", "https://discordapp.com/api/oauth2/authorize?client_id=547525130176299038&permissions=388178&scope=bot")
 
 
   client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
   client.user.setPresence({
     game: {
-      name: 'Fetch with all the good bois!',
+      name: '🎾 Fetch with all the good bois!',
       type: 'PLAYING'
     },
     status: 'Throwing ball 🎾'
