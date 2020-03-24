@@ -1,0 +1,24 @@
+{
+  "name": "tennisball",
+  "version": "1.0.0",
+  "description": "A Friendly Discord Bot!",
+  "main": "bot.js",
+  "dependencies": {
+    "all": "^0.0.0",
+    "discord.js": "^11.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Phoenixthedoggo/TennisBall.git"
+  },
+  "author": "Phoenix Shepherd",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Phoenixthedoggo/TennisBall/issues"
+  },
+  "homepage": "https://github.com/Phoenixthedoggo/TennisBall#readme"
+}
